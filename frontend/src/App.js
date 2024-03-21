@@ -2,8 +2,8 @@ import './App.css';
 import Header from './Components/Header/Header';
 import Hero from './Components/Hero/Hero'
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import Footer from './Components/Footer/Footer';
-
+import Popular from './Components/Popular/Popular';
+import Offers from './Components/Offers/Offers';
 
 
 function App() {
@@ -12,6 +12,8 @@ function App() {
       <BrowserRouter>
       <Header/>
       <Hero/>
+      <Popular/>
+      <Offers/>
       <Routes>
         <Route path='/' element={<home/>}/>
         <Route path="/women" element={<category category="women"/>}/>
@@ -22,8 +24,7 @@ function App() {
         <Route path='/cart' element={<cart/>}/>
         <Route path='/login' element={<login/>}/>
         <Route path='/signup' element={<signup/>}/>
-      </Routes>
-      <Footer/>
+      </Routes>      
       </BrowserRouter>
     </div>
   );
