@@ -3,6 +3,7 @@ import './Header.css'
 import logo from '../Assets/logo.png'
 import cart_icon from '../Assets/cart_icon.png'
 import { Link } from 'react-router-dom'
+import {NavItems} from './NavItems'
 
 
 const Header = ({containerStyles}) => {
@@ -11,6 +12,7 @@ const Header = ({containerStyles}) => {
 
   return (
    <header className="fixed top-0 left-0 m-auto max_padd_container w-full bg-white ring-1 ring-slate-900/5 z-10">
+      <div className="top-bar"><h4>Dial now for immediate support and peace of mind +94 76 990 3005</h4></div>
     <div className="navbar px-4 flexBetween py-3 max-xs:px-2">
          <div className="nav-logo">
             <img src={logo} alt=" " />

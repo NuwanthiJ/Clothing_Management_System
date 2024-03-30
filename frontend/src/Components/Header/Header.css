@@ -1,3 +1,10 @@
+.top-bar{
+    display: flex;
+    justify-content: space-around;
+    font-size: small;
+    background-color: rgb(251, 240, 255);
+}
+
 .navbar{
     display: flex;
     justify-content: space-around;
