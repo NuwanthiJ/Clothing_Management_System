@@ -4,7 +4,6 @@ import Hero from './Components/Hero/Hero'
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
 
-console.log(" hi");
 
 
 
