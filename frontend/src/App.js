@@ -6,6 +6,7 @@ import Popular from './Components/Popular/Popular';
 import Offers from './Components/Offers/Offers';
 
 
+
 function App() {
   return (
     <div>
