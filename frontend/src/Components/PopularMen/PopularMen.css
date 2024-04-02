@@ -1,0 +1,27 @@
+.popular-men{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: auto;
+    padding: 5%;
+}
+
+.popular-men h1{
+    color: #171717;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.popular-men hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+}
+
+.popular-item-men{
+    display: flex;
+    margin-top: 50px;
+    gap: 30px;
+}
