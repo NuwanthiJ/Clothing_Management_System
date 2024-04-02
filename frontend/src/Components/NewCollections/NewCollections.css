@@ -1,4 +1,4 @@
-.popular-women{
+.new-collection{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,21 +7,23 @@
     padding: 5%;
 }
 
-.popular-women h1{
+.new-collection h1{
     color: #171717;
     font-size: 50px;
     font-weight: 600;
 }
 
-.popular-women hr{
+.new-collection hr{
     width: 200px;
     height: 6px;
     border-radius: 10px;
     background: #252525;
 }
 
-.popular-item-women{
-    display: flex;
-    margin-top: 50px;
-    gap: 30px;
+.new-item{
+    display: grid;
+    margin:5% 2% 5% 2%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    row-gap: 20px;
 }
