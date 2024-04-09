@@ -1,0 +1,76 @@
+.profile form {
+    background-color: #ead9cd; 
+    display: block;
+    width: 350px;
+    height: auto;
+    border: white solid 2px;
+    padding: 6px;
+    border-radius: 10px;
+  }
+  
+  .profile {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color:#cfe3e4;
+    background-position: center;
+    background: url(img3.jpg);
+    background-position: center;
+     
+    
+  }
+  .profile forgotpwd{
+    color: blue;
+  }
+  .profile register{
+    color: blue;
+  }
+  
+  .profile-btn{
+    width: 50%; /* Make input fields stretch to fill their container */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #aa6639;
+  
+  }
+  
+  .profile-btn:hover {
+    background-color: #954007; /* Change the background color on hover */
+  }
+
+.profile-input-box1,
+.profile-input-box2,
+.profile-input-box3,
+.profile-input-box4,
+.profile-input-box5 {
+  margin-bottom: 20px;
+}
+
+.profile-input-box1 input,
+.profile-input-box2 input,
+.profile-input-box3 input,
+.profile-input-box4 input,
+.profile-input-box5 input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.profile-input-box1 i,
+.profile-input-box2 i,
+.profile-input-box3 i,
+.profile-input-box4 i,
+.profile-input-box5 i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+
+.profile-error {
+  color: red;
+  margin-bottom: 10px;
+}
