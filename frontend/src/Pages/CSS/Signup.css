@@ -1,0 +1,87 @@
+.signup form {
+    background-color: #ead9cd; 
+    display: block;
+    width: 350px;
+    height: auto;
+    border: white solid 2px;
+    padding: 6px;
+    border-radius: 10px;
+  }
+  
+  .signup {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color:#f7fafb;
+    background-position: center;
+    background-position: center;
+     
+    
+  }
+  .signup forgotpwd{
+    color: blue;
+  }
+  .signup register{
+    color: blue;
+  }
+  
+  .SignUp-btn{
+    width: 50%; /* Make input fields stretch to fill their container */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #aa6639;
+  
+  }
+  
+  .SignUp-btn:hover {
+    background-color: #954007; /* Change the background color on hover */
+  }
+  
+  .signup-input-box1,
+  .signup-input-box3,
+  .signup-input-box4,
+  .signup-input-box5,
+  .signup-input-box6 {
+  margin-bottom: 20px;
+  }
+  
+  .signup-input-box1 input,
+  .signup-input-box3 input,
+  .signup-input-box4 input,
+  .signup-input-box5 input,
+  .signup-input-box6 input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  }
+  
+  .signup-input-box1 i,
+  .signup-input-box3 i,
+  .signup-input-box4 i,
+  .signup-input-box5 i,
+  .signup-input-box6 i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  }
+  
+  .error {
+  color: red;
+  margin-bottom: 10px;
+  }
+  
+  .login-link {
+  text-align: center;
+  }
+  
+  .login-link p {
+  margin-bottom: 0;
+  }
+  
+  .login-link a {
+  color: blue;
+  }
