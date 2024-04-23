@@ -1,0 +1,94 @@
+.pmall-grid-container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas:
+    'sidebar header header header'
+    'sidebar main main main';
+  height: 100vh;
+}
+
+.pmall-grid-container h3{
+  margin: 2% 0 2% 2%;
+}
+
+
+.display-container .productSearch input{
+  width: 300px;
+  height: 50px;
+  font-size: 18px;
+  padding: 8px;
+  margin-left: 2%;
+  border-radius: 10px;
+  background-color: #ededeb;
+  border: 2px solid #edad18;
+}
+
+.display-container .productSearch input[type="search" i] {
+    appearance: auto;
+    box-sizing: border-box;
+    outline-offset: 0px;
+    outline-color: white;
+}
+
+
+.pmreport{
+  background-color: #008c17;
+  color:white;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 8px;
+  margin: 2%;
+  float: right;
+}
+
+.product-table {
+display:fixed;
+border-collapse: collapse;
+border-spacing: 0;
+width: 95%;
+border: 1px solid #ddd;
+font-size: 18px;
+overflow-x: auto;
+/* margin-top: 50px; */
+margin: 2% 2% 2% 2%;
+box-shadow: 0px 10px 10px #ccc;
+}
+
+.pm-thead{
+background-color: #ccc;
+color: #222;
+}
+
+.product-table th,
+.product-table td{
+padding: 0.8rem;
+}
+
+.product-table tbody tr:hover{
+background-color: #eee;
+}
+
+.product-table th, td {
+text-align: left;
+padding: 18px;
+table-layout: auto;
+width: fit-content;
+}
+
+.pm-actions{
+display:flex;
+justify-content: space-around;
+}
+
+.pm-actions svg{
+cursor: pointer;
+}
+
+.pm-edit{
+color: blue;
+}
+
+.pm-delete{
+color:#e10d05;
+}
