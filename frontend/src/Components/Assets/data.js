@@ -1,33 +1,33 @@
-import p1_img from './product_1.png'
-import p2_img from './product_2.png'
-import p3_img from './product_3.png'
-import p4_img from './product_4.png'
+import p1_img from './product_2.jpg'
+import p2_img from './product_5.jpg'
+import p3_img from './product_3.jpg'
+import p4_img from './product_4.jpg'
 
 let data_product = [
   {
     id:1,
-    name:"Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name:"AISLE BLUE CROP TOP",
     image:p1_img,
-    new_price:50.00,
-    old_price:80.50,
+    new_price:1500.00,
+    old_price:1550.00,
   },
-  {id:2,
-    name:"Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+  {id:5,
+    name:"HANAH BLACK LONG SLEEVE BLOUSE ",
     image:p2_img,
-    new_price:85.00,
-    old_price:120.50,
+    new_price:1200.00,
+    old_price:1320.00,
   },
   {id:3,
-    name:"Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name:"PENELOPE RED STRIPE BLOUSE ",
     image:p3_img,
-    new_price:60.00,
-    old_price:100.50,
+    new_price:1600.00,
+    old_price:1650.00,
   },
   {id:4,
-    name:"Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name:"ELISE SLEEVE PLEATED GREEN BLOUSE",
     image:p4_img,
-    new_price:100.00,
-    old_price:150.00,
+    new_price:1300.00,
+    old_price:1350.00,
   },
 ];
 
