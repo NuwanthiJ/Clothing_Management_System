@@ -1,9 +1,12 @@
-const express = require('express');
-const Item = require('../models/item');
-const router = express.Router();
-const path = require('path');
-const fs = require('fs');
-const { z } = require('zod');
+import express from 'express';
+import Item from '../models/item.js';
+import { z } from 'zod';
+
+// const Item = require('../models/item');
+// const router = express.Router();
+// const path = require('path');
+// const fs = require('fs');
+// const { z } = require('zod');
 
 // Schema for handle validations (Insert Data)
 const itemSchema = z.object({
@@ -26,7 +29,7 @@ const itemUpdateSchema = z.object({
 	subtotal: z.number().positive().optional()
 });
 
-router.post('/Item/save', (req, res) => {
+const addCart = async (req, res) => {
 	try {
 		// Validate request body
 		const itemData = itemSchema.parse(req.body);
@@ -51,10 +54,10 @@ router.post('/Item/save', (req, res) => {
 			error: error.errors
 		});
 	}
-});
+};
 
 //read
-router.get('/Item', (req, res) => {
+const viewAllCart = async (req, res) => {
 	Item.find()
 		.exec()
 		.then((item) => {
@@ -68,10 +71,10 @@ router.get('/Item', (req, res) => {
 				error: err
 			});
 		});
-});
+};
 
 //get specific details
-router.get('/Item/:id', (req, res) => {
+const viewCart = async (req, res) => {
 	let userId = req.params.id;
 
 	Item.find({ userId: userId })
@@ -87,10 +90,10 @@ router.get('/Item/:id', (req, res) => {
 		.catch((err) => {
 			return res.status(400).json({ success: false, error: err });
 		});
-});
+};
 
 // Update route
-router.put('/Item/update/:id', async (req, res) => {
+const updateCart = async (req, res) => {
 	try {
 		// Validate request body
 		const updateData = itemUpdateSchema.parse(req.body);
@@ -106,10 +109,10 @@ router.put('/Item/update/:id', async (req, res) => {
 			error: error.errors || 'Invalid data'
 		});
 	}
-});
+};
 
 //delete
-router.delete('/Item/delete/:id', (req, res) => {
+const deleteCart = async (req, res) => {
 	Item.findByIdAndDelete(req.params.id)
 		.then((deletedProject) => {
 			if (!deletedProject) {
@@ -120,6 +123,6 @@ router.delete('/Item/delete/:id', (req, res) => {
 		.catch((err) => {
 			return res.status(400).json({ message: 'Delete unsuccessful', error: err });
 		});
-});
+};
 
-module.exports = router;
+export { addCart, viewAllCart, viewCart, updateCart, deleteCart };

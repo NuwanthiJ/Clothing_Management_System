@@ -3,8 +3,8 @@ import dbCon from './utils/db.util.js'
 import cors from 'cors'
 
 import feedbackRouter from './routes/feedback.route.js'
-import itemRoutes from './routes/item.js'
-import itemdetailsRoutes from './routes/itemdetails.js'
+import itemRoutes from './routes/item.route.js'
+
 
 import feedbackrouter from './routes/feedback.route.js'
 import productrouter from './routes/product.route.js'
@@ -21,9 +21,9 @@ app.use(express.json())
 app.use(cors())
 
 
-app.use('/api/feedback', feedbackRouter)
-app.use('/items', itemRoutes);
-app.use('/itemdetails', itemdetailsRoutes);
+// app.use('/api/feedback', feedbackRouter)
+// app.use('/items', itemRoutes);
+// app.use('/itemdetails', itemdetailsRoutes);
 
 
 
@@ -65,6 +65,7 @@ app.post('/api/product', upload.single("image"),  (req,res) => {
 
 app.use('/api/feedback', feedbackrouter);
 app.use('/api/product',productrouter);
+app.use('/api/item', itemRoutes);
 
 
 app.listen(3000, () => {

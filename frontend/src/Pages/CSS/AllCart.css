@@ -107,6 +107,16 @@
 	text-decoration: line-through;
 }
 
+.search-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+
 .size-qty {
 	/* align-items: center; */
 	display: flex;

@@ -8,6 +8,7 @@ const AllCart = () => {
 	const [subTotal, setSubTotal] = useState(0);
 	const [saved, setSaved] = useState(0);
 	const [total, setTotal] = useState(0);
+	const [searchQuery, setSearchQuery] = useState('');
 
 	// Run fetchData function
 	useEffect(() => {
@@ -17,7 +18,7 @@ const AllCart = () => {
 	// Fetch data from the backend
 	const fetchData = async () => {
 		try {
-			const response = await fetch('http://localhost:8000/items/Item');
+			const response = await fetch('http://localhost:3000/api/item/items');
 			if (!response.ok) {
 				throw new Error('Failed to get cart items');
 			}
@@ -81,6 +82,9 @@ const AllCart = () => {
 		generatePDF(title, columns, cartItems, 'cart_data_report');
 	};
 
+	// Filter cart items based on search query
+	const filteredCartItems = cartItems.filter((item) => item.topic.toLowerCase().includes(searchQuery.toLowerCase()));
+
 	return (
 		<div>
 			{cartItems.length === 0 ? (
@@ -89,11 +93,22 @@ const AllCart = () => {
 				</div>
 			) : (
 				<div>
-					<h2 className='page-title'>Cart Item List ({cartItems.length})</h2>
+					<h2 className='page-title'>All Cart Item List ({cartItems.length})</h2>
+					{/* Search Input */}
+					<div className=''>
+						<input
+							type='text'
+							value={searchQuery}
+							onChange={(e) => setSearchQuery(e.target.value)}
+							placeholder='Search by name...'
+							className='search-box'
+						/>
+					</div>
+					{filteredCartItems.length === 0 && <p style={{ margin: '50px' }}>No items found...</p>}
 					<div className='container-cart'>
 						<div className='left'>
 							{/* Cart item Card */}
-							{cartItems.map((item, index) => (
+							{filteredCartItems.map((item, index) => (
 								<div className='cart-item' key={index}>
 									<div className='cart-item-card'>
 										<div className='card-left'>

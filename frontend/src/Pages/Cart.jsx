@@ -14,6 +14,7 @@ const Cart = () => {
 	const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 	const [showModal, setShowModal] = useState(false);
 	const [itemToDelete, setItemToDelete] = useState(null);
+	const [searchQuery, setSearchQuery] = useState('');
 	const navigate = useNavigate();
 
 	const handleCheckboxChange = () => {
@@ -29,7 +30,7 @@ const Cart = () => {
 	const fetchData = async () => {
 		const userId = localStorage.getItem('userId');
 		try {
-			const response = await fetch(`http://localhost:8000/items/Item/${userId}`);
+			const response = await fetch(`http://localhost:3000/api/item/${userId}`);
 			if (!response.ok) {
 				throw new Error('Failed to get cart items');
 			}
@@ -64,7 +65,7 @@ const Cart = () => {
 	const handleUpdateQuantity = async (id, quantity) => {
 		try {
 			const newQuantity = Math.max(1, quantity);
-			const response = await fetch(`http://localhost:8000/items/Item/update/${id}`, {
+			const response = await fetch(`http://localhost:3000/api/item/update/${id}`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'
@@ -87,7 +88,7 @@ const Cart = () => {
 	const handleSizeChange = async (id, size) => {
 		try {
 			const newSize = size;
-			const response = await fetch(`http://localhost:8000/items/Item/update/${id}`, {
+			const response = await fetch(`http://localhost:3000/api/item/update/${id}`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'
@@ -114,7 +115,7 @@ const Cart = () => {
 	// Confirm deletion
 	const confirmDelete = async () => {
 		try {
-			const response = await fetch(`http://localhost:8000/items/Item/delete/${itemToDelete}`, {
+			const response = await fetch(`http://localhost:3000/api/item/delete/${itemToDelete}`, {
 				method: 'DELETE'
 			});
 			if (!response.ok) {
@@ -165,6 +166,9 @@ const Cart = () => {
 		navigate('/checkout');
 	};
 
+	// Filter cart items based on search query
+	const filteredCartItems = cartItems.filter((item) => item.topic.toLowerCase().includes(searchQuery.toLowerCase()));
+
 	return (
 		<div>
 			{cartItems.length === 0 ? (
@@ -179,114 +183,131 @@ const Cart = () => {
 			) : (
 				<div>
 					<h2 className='page-title'>Shopping Cart ({cartItems.length})</h2>
-					<div className='container-cart'>
-						<div className='left'>
-							{/* Select all checkbox */}
-							<div className='select-all'>
-								<input type='checkbox' checked={selectAll} onChange={toggleSelectAll} />
-								<label>Select All</label>
-							</div>
+					{/* Search Input */}
+					<div className=''>
+						<input
+							type='text'
+							value={searchQuery}
+							onChange={(e) => setSearchQuery(e.target.value)}
+							placeholder='Search by name...'
+							className='search-box'
+						/>
+					</div>
+					{filteredCartItems.length === 0 ? (
+						<p style={{ margin: '50px' }}>No items found</p>
+					) : (
+						<div className='container-cart'>
+							<div className='left'>
+								{/* Select all checkbox */}
+								<div className='select-all'>
+									<input type='checkbox' checked={selectAll} onChange={toggleSelectAll} />
+									<label>Select All</label>
+								</div>
 
-							{/* Cart item Card */}
-							{cartItems.map((item, index) => (
-								<div className='cart-item' key={index}>
-									<div className='cart-item-card'>
-										{/* Checkbox for individual item */}
-										<div className='checkbox'>
-											<input
-												type='checkbox'
-												checked={selectedItems.includes(item._id)}
-												onChange={() => toggleSelection(item._id)}
-											/>
-										</div>
-										<div className='card-left'>
-											<img src={item.image} alt={item.topic} />
-										</div>
-
-										{/* Name and Delete Button */}
-										<div className='card-right'>
-											<div className='name-delete'>
-												<h4 className='title'>{item.topic}</h4>
-												{/* Delete Button */}
-												<div className='delete-img'>
-													<button className='delete-btn' onClick={() => handleDelete(item._id)}>
-														<img src={deleteImg} className='button-image' alt='Remove' />
-													</button>
-												</div>
+								{/* Cart item Card */}
+								{filteredCartItems.map((item, index) => (
+									<div className='cart-item' key={index}>
+										<div className='cart-item-card'>
+											{/* Checkbox for individual item */}
+											<div className='checkbox'>
+												<input
+													type='checkbox'
+													checked={selectedItems.includes(item._id)}
+													onChange={() => toggleSelection(item._id)}
+												/>
 											</div>
-											<div className='item-details'>
-												<div className='new-old-price'>
-													<p className='new-price'>LKR {item.price.toFixed(2)}</p>
-													<p className='old-price'>LKR {item.oldPrice.toFixed(2)}</p>
-												</div>
-												<div className='size-qty'>
-													{/* Size Change */}
-													<div className='size-dropdown'>
-														<select
-															value={item.size}
-															onChange={(e) => handleSizeChange(item._id, e.target.value)}
-														>
-															<option value='S'>S</option>
-															<option value='M'>M</option>
-															<option value='L'>L</option>
-															<option value='XL'>XL</option>
-															<option value='XXL'>XXL</option>
-														</select>
-													</div>
-													{/* <p className='size'>Size: {item.size}</p> */}
-													{/* Update Qty */}
-													<div className='qty'>
-														<label>Qty:</label>
-														<input
-															type='number'
-															value={item.quantity}
-															onChange={(e) => handleUpdateQuantity(item._id, e.target.value)}
-														/>
+											<div className='card-left'>
+												<img src={item.image} alt={item.topic} />
+											</div>
+
+											{/* Name and Delete Button */}
+											<div className='card-right'>
+												<div className='name-delete'>
+													<h4 className='title'>{item.topic}</h4>
+													{/* Delete Button */}
+													<div className='delete-img'>
+														<button className='delete-btn' onClick={() => handleDelete(item._id)}>
+															<img src={deleteImg} className='button-image' alt='Remove' />
+														</button>
 													</div>
 												</div>
-												<div className='save-total'>
-													<p className='save-price'>
-														Saved LKR {((item.oldPrice - item.price) * item.quantity).toFixed(2)}
-													</p>
-													<p className='total-price'>
-														Total: LKR {(item.price * item.quantity).toFixed(2)}
-													</p>
+												<div className='item-details'>
+													<div className='new-old-price'>
+														<p className='new-price'>LKR {item.price.toFixed(2)}</p>
+														<p className='old-price'>LKR {item.oldPrice.toFixed(2)}</p>
+													</div>
+													<div className='size-qty'>
+														{/* Size Change */}
+														<div className='size-dropdown'>
+															<select
+																value={item.size}
+																onChange={(e) => handleSizeChange(item._id, e.target.value)}
+															>
+																<option value='S'>S</option>
+																<option value='M'>M</option>
+																<option value='L'>L</option>
+																<option value='XL'>XL</option>
+																<option value='XXL'>XXL</option>
+															</select>
+														</div>
+														{/* <p className='size'>Size: {item.size}</p> */}
+														{/* Update Qty */}
+														<div className='qty'>
+															<label>Qty:</label>
+															<input
+																type='number'
+																value={item.quantity}
+																onChange={(e) => handleUpdateQuantity(item._id, e.target.value)}
+															/>
+														</div>
+													</div>
+													<div className='save-total'>
+														<p className='save-price'>
+															Saved LKR {((item.oldPrice - item.price) * item.quantity).toFixed(2)}
+														</p>
+														<p className='total-price'>
+															Total: LKR {(item.price * item.quantity).toFixed(2)}
+														</p>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
+								))}
+							</div>
+							{/* Right Side Card */}
+							<div className='right'>
+								<h2>Summary</h2>
+
+								<div className='s-price'>
+									<p>Subtotal</p>
+									<p>LKR {subTotal.toFixed(2)}</p>
 								</div>
-							))}
+
+								<div className='s-price'>
+									<p>Saved</p>
+									<p>LKR {saved.toFixed(2)}</p>
+								</div>
+
+								<div className='s-price s-total'>
+									<p>Total</p>
+									<p>LKR {total.toFixed(2)}</p>
+								</div>
+
+								<div className='verify-checkout'>
+									<input onChange={handleCheckboxChange} type='checkbox' />
+									<label>Do you want to pay now?</label>
+								</div>
+								{/* Checkout Button */}
+								<button onClick={handleCheckout} disabled={selectedItems.length === 0 || !isChecked}>
+									Checkout ({selectedItems.length})
+								</button>
+								<button onClick={() => navigate('/cartitems')} className='allcart'>
+									All Cart Items
+								</button>
+							</div>
 						</div>
-						{/* Right Side Card */}
-						<div className='right'>
-							<h2>Summary</h2>
-
-							<div className='s-price'>
-								<p>Subtotal</p>
-								<p>LKR {subTotal.toFixed(2)}</p>
-							</div>
-
-							<div className='s-price'>
-								<p>Saved</p>
-								<p>LKR {saved.toFixed(2)}</p>
-							</div>
-
-							<div className='s-price s-total'>
-								<p>Total</p>
-								<p>LKR {total.toFixed(2)}</p>
-							</div>
-
-							<div className='verify-checkout'>
-								<input onChange={handleCheckboxChange} type='checkbox' />
-								<label>Do you want to pay now?</label>
-							</div>
-							{/* Checkout Button */}
-							<button onClick={handleCheckout} disabled={selectedItems.length === 0 || !isChecked}>
-								Checkout ({selectedItems.length})
-							</button>
-						</div>
-					</div>
+					)}
 				</div>
 			)}
 

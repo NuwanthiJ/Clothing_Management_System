@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const itemSchema = new mongoose.Schema({
 	userId: {
@@ -55,4 +55,6 @@ const itemSchema = new mongoose.Schema({
 	// },
 });
 
-module.exports = mongoose.model('item', itemSchema);
+const Item = mongoose.model('Item', itemSchema);
+
+export default Item;

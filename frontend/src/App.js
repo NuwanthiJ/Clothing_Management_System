@@ -5,6 +5,7 @@ import Login from './Pages/Login';
 import Home from './Pages/Home';
 import Signup from './Pages/Signup';
 import Cart from './Pages/Cart';
+import AllCart from './Pages/AllCart';
 import Product from './Pages/Product';
 import ShopCategory from './Pages/ShopCategory';
 import men_banner from './Components/Assets/banner_mens.png'

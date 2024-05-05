@@ -220,6 +220,12 @@
 	cursor: not-allowed;
 }
 
+.allcart {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
 /* Styles for the delete confirmation pop-up */
 .cart-overlay {
 	position: fixed;
@@ -258,6 +264,16 @@
 	border-radius: 4px;
 	cursor: pointer;
 }
+
+.search-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	margin-left: 20px;
+	border-radius: 5px;
+}
+
 .cart-box button {
 	background-color: #ff3b3b;
 	color: white;
