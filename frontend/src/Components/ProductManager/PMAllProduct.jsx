@@ -32,10 +32,7 @@ function PMAllProduct  (props)  {
 
 
   const Filter = (event) => {
-    // setRecords(data.filter(f => f.category.toLowerCase().includes(event.target.value)))
-    // setRecords(data.filter(f => f.productName.toLowerCase().includes(event.target.value)))
     setRecords(data.filter(f => f.productID.toLowerCase().includes(event.target.value)))
-    // setRecords(data.filter(f => f.description.toLowerCase().includes(event.target.value)))
   }
 
 
@@ -91,7 +88,6 @@ function PMAllProduct  (props)  {
                     <th >Size</th>
                     <th >Price</th>
                     <th >Date</th>
-                    {/* <th style={{textAlign:"center"}}>Image</th> */}
                     <th style={{textAlign:"center"}}>Action</th>
                 </tr>
               </thead>
@@ -107,8 +103,6 @@ function PMAllProduct  (props)  {
                       <td>{product.size}</td>
                       <td>{product.price}</td>
                       <td>{product.description}</td>
-                      {/* <td>{product.image}</td> */}
-                      {/* <td><img src={product.image} alt=''/></td> */}
                       <td>
                         <span className="pm-actions">
                           <Link to={`/pmeditproduct/${product._id}`}>

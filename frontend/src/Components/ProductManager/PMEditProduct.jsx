@@ -18,7 +18,6 @@ export default function PMEditProduct() {
         quantity:"",
         size:"",
         price:"",
-        // image:""
     }
 
     const {id} = useParams();
@@ -87,7 +86,6 @@ export default function PMEditProduct() {
     <form onSubmit={submitForm}>
         <div class="form-bg">
             <div class="form-container">
-            {/* <Link to="/pmallproduct"><button classname="back"><h6>Back</h6></button></Link> */}
                 <h3 class="title">Edit Product</h3>
                     <div  class="form-horizontal">
                     <div class="form-group">
@@ -144,12 +142,6 @@ export default function PMEditProduct() {
                             <div class="ap-col-75">
                                 <input type="number" name="price" onChange={inputChangeHandler} value={product.price}  class="form-control" placeholder="Price" /></div>
                         </div>
-                        {/* <div class="form-group">
-                            <div class="ap-col-25"><label>Image</label></div>
-                            <div class="ap-col-75">
-                                <input type="file" class="form-control" name="image" onChange={inputChangeHandler} value={image}  multiple="multiple" accept="image/png, image/jpeg"/>
-                            </div>
-                        </div> */}
                         <div class="form-group">
                             <div class="ap-col-25"><label>date</label></div>
                             <div class="ap-col-75"><input type="date" name="description" onChange={inputChangeHandler} value={product.description}  class="form-control" placeholder="Description" /></div>

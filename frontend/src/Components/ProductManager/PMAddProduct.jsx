@@ -35,13 +35,6 @@ export default function PMAddProduct() {
 
   const navigate = useNavigate();
 
-//   const addProduct = async (data) => {
-//     const response = await axios.post("http://localhost:3000/api/product/" , data);
-//     if(response.status === 200){
-//           toast.success(response.data);
-//           alert("Do You Want to Add New Product");
-//       }
-//   }
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -70,7 +63,7 @@ export default function PMAddProduct() {
             console.error(error)
         }
         
-        // addProduct(formData);
+        
         navigate("/pmallproduct");
     }
   }
@@ -114,16 +107,12 @@ export default function PMAddProduct() {
                                 <option value="None">None</option>
                                 <option value="Women crop-top">Women crop-top</option>
                                 <option value="Women blouse">Women blouse</option>
-                                {/* <option value="Women office wear">Women office wear</option> */}
                                 <option value="Women Skirt">Women Skirt</option>
                                 <option value="Women top">Women top</option>
-                                {/* <option value="Women top">Women top</option> */}
                                 <option value="Men T-Shirt">Men T-Shirt</option>
                                 <option value="Men shorts">Men shorts</option>
                                 <option value="Men Shirt">Men Shirt</option>
                                 <option value="Men Sarong">Men Sarong</option>
-                                {/* <option value="Men office wear">Men office wear</option> */}
-                                {/* <option value="Men t-shirt">Men t-shirt</option> */}
                             </select></div>
                         </div>
                         <div class="form-group">

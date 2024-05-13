@@ -1,6 +1,6 @@
 import React from 'react'
 import 
-{ BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill}
+{ BsFillArchiveFill, BsFillGrid3X3GapFill, BsFillBellFill}
  from 'react-icons/bs'
  import 
  { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
@@ -66,19 +66,19 @@ function PMHome() {
                     <h3>MEN'S ITEMS</h3>
                     <BsFillArchiveFill className='pm-card_icon'/>
                 </div>
-                <h1>50</h1>
+                <h1>5</h1>
             </div>
             <div className='pm-card'>
                 <div className='pm-card-inner'>
                     <h3>WOMEN'S ITEMS</h3>
                     <BsFillGrid3X3GapFill className='pm-card_icon'/>
                 </div>
-                <h1>30</h1>
+                <h1>5</h1>
             </div>
             <div className='pm-card'>
                 <div className='pm-card-inner'>
-                    <h3>SEASONAL OFFERS</h3>
-                    <BsPeopleFill className='pm-card_icon'/>
+                    <h3>All PRODUCTS</h3>
+                    <BsFillArchiveFill className='pm-card_icon'/>
                 </div>
                 <h1>10</h1>
             </div>

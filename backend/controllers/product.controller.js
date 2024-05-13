@@ -8,7 +8,6 @@ const addproduct = async (req, res) => {
         const newProduct = new Product({
             productID, productName, description, category, quantity, size, price, image
         })
-        // res.sendFile(path.join(__dirname, "./uploads/image.png"));
         await newProduct.save()
         res.status(200).json(newProduct);
     } catch (error) {
@@ -41,7 +40,6 @@ const updateProduct = async(req, res) => {
             return res.status(404).json({success:false, message:'Product not found!'})
         }
         res.status(200).json(updateProduct)
-        // res.status(200).json({success:true, message:'Product Updated Successfully!', updateProduct})
     } catch (error) {
         console.log(error);
         return res.status(500).json({success:false, message:'Internal Server Error'})
