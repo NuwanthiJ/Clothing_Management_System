@@ -99,10 +99,6 @@ export default function PMEditProduct() {
                             <div class="ap-col-75"><input type="text" name="productName" onChange={inputChangeHandler} value={product.productName} class="form-control" placeholder="Name" /></div>
                         </div>
                         <div class="form-group">
-                            <div class="ap-col-25"><label>Product Description</label></div>
-                            <div class="ap-col-75"><input type="text" name="description" onChange={inputChangeHandler} value={product.description}  class="form-control" placeholder="Description" /></div>
-                        </div>
-                        <div class="form-group">
                             <div class="ap-col-25"><label>Category</label></div>
                             <div class="ap-col-75"><select class="form-select" name="category" onChange={inputChangeHandler} value={product.category} >
                                 <option value="None">None</option>
@@ -154,6 +150,10 @@ export default function PMEditProduct() {
                                 <input type="file" class="form-control" name="image" onChange={inputChangeHandler} value={image}  multiple="multiple" accept="image/png, image/jpeg"/>
                             </div>
                         </div> */}
+                        <div class="form-group">
+                            <div class="ap-col-25"><label>date</label></div>
+                            <div class="ap-col-75"><input type="date" name="description" onChange={inputChangeHandler} value={product.description}  class="form-control" placeholder="Description" /></div>
+                        </div>
                         <input type="submit" class="btn add" value="Update"/>
                     </div>
                 </div>

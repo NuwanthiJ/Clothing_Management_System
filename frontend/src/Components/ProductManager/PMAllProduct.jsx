@@ -12,9 +12,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import {BsFillArchiveFill} from 'react-icons/bs'
 import { FaDownload } from "react-icons/fa";
 
+
 function PMAllProduct  (props)  {
 
   const [data,setData] = useState([]);
+  const [records,setRecords] = useState([]);
 
   useEffect(() => {
     getProduct();
@@ -24,8 +26,17 @@ function PMAllProduct  (props)  {
     const response = await axios.get("http://localhost:3000/api/product");
     if(response.status === 200){
       setData(response.data);
+      setRecords(response.data);
     }
   };
+
+
+  const Filter = (event) => {
+    // setRecords(data.filter(f => f.category.toLowerCase().includes(event.target.value)))
+    // setRecords(data.filter(f => f.productName.toLowerCase().includes(event.target.value)))
+    setRecords(data.filter(f => f.productID.toLowerCase().includes(event.target.value)))
+    // setRecords(data.filter(f => f.description.toLowerCase().includes(event.target.value)))
+  }
 
 
   const deleteProduct = async (id) => {
@@ -66,7 +77,7 @@ function PMAllProduct  (props)  {
            <h3> All Products <BsFillArchiveFill className='pm-icon'/></h3>
            <button onClick={handlePrint} className='pmreport'><FaDownload /> Generate Report</button>
             <div className="productSearch">
-              <input type="search" className="productSearchInput" id="search" placeholder='   Search here...'/>
+              <input type="search" className="productSearchInput" id="search" onChange={Filter} placeholder='   Search here...'/>
             </div>
            <div ref={ComponentsRef}>
             <table className='product-table'>
@@ -85,7 +96,7 @@ function PMAllProduct  (props)  {
                 </tr>
               </thead>
               <tbody>
-                {data && data.map((product, index)=> {
+              {records.map((product, index)=> {
                   return(
                     <tr key={index}>
                       <th scope="row">{index + 1}</th>
@@ -97,6 +108,7 @@ function PMAllProduct  (props)  {
                       <td>{product.price}</td>
                       <td>{product.description}</td>
                       {/* <td>{product.image}</td> */}
+                      {/* <td><img src={product.image} alt=''/></td> */}
                       <td>
                         <span className="pm-actions">
                           <Link to={`/pmeditproduct/${product._id}`}>
