@@ -1,5 +1,6 @@
 import express from 'express';
 import Item from '../models/item.js';
+import Payment from '../models/payment.model.js';
 import { z } from 'zod';
 
 // const Item = require('../models/item');
@@ -125,4 +126,23 @@ const deleteCart = async (req, res) => {
 		});
 };
 
-export { addCart, viewAllCart, viewCart, updateCart, deleteCart };
+// get Order History
+const getOrderHistory = async (req, res) => {
+	Payment.find()
+	  .exec()
+	  .then((orderHistory) => {
+		return res.status(200).json({
+		  success: true,
+		  orderHistory: orderHistory,
+		});
+	  })
+	  .catch((err) => {
+		return res.status(400).json({
+		  error: err,
+		});
+	  });
+  };
+
+export { addCart, viewAllCart, viewCart, updateCart, deleteCart ,getOrderHistory
+	
+};

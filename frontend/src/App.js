@@ -15,6 +15,10 @@ import PM_AddProduct from './Components/ProductManager/PMAddProduct';
 import PM_AllProduct from './Components/ProductManager/PMAllProduct';
 import PM_EditProdct from './Components/ProductManager/PMEditProduct';
 
+import OM_Dashboard from './Components/OrderManager/OMDashboard';
+//import OM_Cartitemdetails from '.Components/OrderManager/OMCartitemdetails';
+//import OM_OrderHistory from '.Components/OrderManager/OMOrderHistory';
+
 
 function App() {
 
@@ -41,6 +45,13 @@ function App() {
         <Route path='/addproduct' element={<PM_AddProduct/>}/>
         <Route path='/pmallproduct' element={<PM_AllProduct/>}/>
         <Route path="/pmeditproduct/:id" element={<PM_EditProdct/>}/>
+
+        {/* Order Manager */}
+        <Route path='/om_dashboard' element={<OM_Dashboard/>}/>
+        {/*<Route path='/cartitemdetails' element={<OM_Cartitemdetails/>}/>
+        <Route path='/orderhistory' element={<OM_OrderHistory/>}/>*/} 
+          
+             
       </Routes>
     
       </BrowserRouter>

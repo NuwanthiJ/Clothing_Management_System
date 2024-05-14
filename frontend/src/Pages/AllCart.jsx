@@ -88,12 +88,12 @@ const AllCart = () => {
 	return (
 		<div>
 			{cartItems.length === 0 ? (
-				<div className='no-item'>
+				<div className='cart-no-item'>
 					<p>No items yet...</p>
 				</div>
 			) : (
 				<div>
-					<h2 className='page-title'>All Cart Item List ({cartItems.length})</h2>
+					<h2 className='cart-page-title'>All Cart Item List ({cartItems.length})</h2>
 					{/* Search Input */}
 					<div className=''>
 						<input
@@ -101,12 +101,12 @@ const AllCart = () => {
 							value={searchQuery}
 							onChange={(e) => setSearchQuery(e.target.value)}
 							placeholder='Search by name...'
-							className='search-box'
+							className='cart-search-box'
 						/>
 					</div>
 					{filteredCartItems.length === 0 && <p style={{ margin: '50px' }}>No items found...</p>}
-					<div className='container-cart'>
-						<div className='left'>
+					<div className='cart-container-cart'>
+						<div className='cart-left'>
 							{/* Cart item Card */}
 							{filteredCartItems.map((item, index) => (
 								<div className='cart-item' key={index}>
@@ -117,23 +117,23 @@ const AllCart = () => {
 
 										{/* Name and Delete Button */}
 										<div className='card-right'>
-											<div className='name-delete'>
-												<h4 className='title'>{item.topic}</h4>
+											<div className='cart-name-delete'>
+												<h4 className='cart-title'>{item.topic}</h4>
 											</div>
-											<div className='item-details'>
-												<div className='new-old-price'>
-													<p className='new-price'>LKR {item.price.toFixed(2)}</p>
+											<div className='cart-item-details'>
+												<div className='cart-new-old-price'>
+													<p className='cart-new-price'>LKR {item.price.toFixed(2)}</p>
 													{/* <p className='old-price'>LKR {item.oldPrice.toFixed(2)}</p> */}
 												</div>
-												<div className='size-qty'>
-													<p className='size'>Size: {item.size}</p>
-													<p className='qty'>Quantity: {item.quantity}</p>
+												<div className='cart-size-qty'>
+													<p className='cart-size'>Size: {item.size}</p>
+													<p className='cart-qty'>Quantity: {item.quantity}</p>
 												</div>
-												<div className='save-total'>
-													<p className='save-price'>
+												<div className='cart-save-total'>
+													<p className='cart-save-price'>
 														Discount LKR {((item.oldPrice - item.price) * item.quantity).toFixed(2)}
 													</p>
-													<p className='total-price'>
+													<p className='cart-total-price'>
 														Total: LKR {(item.price * item.quantity).toFixed(2)}
 													</p>
 												</div>
@@ -144,27 +144,27 @@ const AllCart = () => {
 							))}
 						</div>
 						{/* Right Side Card */}
-						<div className='right'>
+						<div className='cart-right'>
 							<h2>Summary</h2>
 
-							<div className='s-price'>
+							<div className='cart-s-price'>
 								<p>Subtotal</p>
 								<p>LKR {subTotal.toFixed(2)}</p>
 							</div>
 
-							<div className='s-price'>
+							<div className='cart-s-price'>
 								<p>Total Discount</p>
 								<p>LKR {saved.toFixed(2)}</p>
 							</div>
 
-							<div className='s-price s-total'>
+							<div className='cart-s-price s-total'>
 								<p>Total Cart Value</p>
 								<p>LKR {total.toFixed(2)}</p>
 							</div>
 
 							{/* Download Report */}
-							<div className='download-btn'>
-								<button className='dwn-btn2' onClick={handleDownloadPDF}>
+							<div className='cart-download-btn'>
+								<button className='cart-dwn-btn2' onClick={handleDownloadPDF}>
 									Download PDF
 								</button>
 							</div>

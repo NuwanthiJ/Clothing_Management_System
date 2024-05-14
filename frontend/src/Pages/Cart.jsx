@@ -173,16 +173,16 @@ const Cart = () => {
 		<div>
 			{cartItems.length === 0 ? (
 				<div>
-					<div className='no-item'>
+					<div className='cart-no-item'>
 						<p>No items yet? Continue shopping to explore more.</p>
 					</div>
-					<div className='no-item'>
+					<div className='cart-no-item'>
 						<button onClick={() => navigate('/home')}>Continue Shopping</button>
 					</div>
 				</div>
 			) : (
 				<div>
-					<h2 className='page-title'>Shopping Cart ({cartItems.length})</h2>
+					<h2 className='cart-page-title'>Shopping Cart ({cartItems.length})</h2>
 					{/* Search Input */}
 					<div className=''>
 						<input
@@ -190,16 +190,16 @@ const Cart = () => {
 							value={searchQuery}
 							onChange={(e) => setSearchQuery(e.target.value)}
 							placeholder='Search by name...'
-							className='search-box'
+							className='cart-search-box'
 						/>
 					</div>
 					{filteredCartItems.length === 0 ? (
 						<p style={{ margin: '50px' }}>No items found</p>
 					) : (
-						<div className='container-cart'>
-							<div className='left'>
+						<div className='cart-container-cart'>
+							<div className='cart-left'>
 								{/* Select all checkbox */}
-								<div className='select-all'>
+								<div className='cart-select-all'>
 									<input type='checkbox' checked={selectAll} onChange={toggleSelectAll} />
 									<label>Select All</label>
 								</div>
@@ -209,36 +209,36 @@ const Cart = () => {
 									<div className='cart-item' key={index}>
 										<div className='cart-item-card'>
 											{/* Checkbox for individual item */}
-											<div className='checkbox'>
+											<div className='cart-checkbox'>
 												<input
 													type='checkbox'
 													checked={selectedItems.includes(item._id)}
 													onChange={() => toggleSelection(item._id)}
 												/>
 											</div>
-											<div className='card-left'>
+											<div className='cart-card-left'>
 												<img src={item.image} alt={item.topic} />
 											</div>
 
 											{/* Name and Delete Button */}
-											<div className='card-right'>
-												<div className='name-delete'>
-													<h4 className='title'>{item.topic}</h4>
+											<div className='cart-card-right'>
+												<div className='cart-name-delete'>
+													<h4 className='cart-title'>{item.topic}</h4>
 													{/* Delete Button */}
-													<div className='delete-img'>
-														<button className='delete-btn' onClick={() => handleDelete(item._id)}>
-															<img src={deleteImg} className='button-image' alt='Remove' />
+													<div className='cart-delete-img'>
+														<button className='cart-delete-btn' onClick={() => handleDelete(item._id)}>
+															<img src={deleteImg} className='cart-button-image' alt='Remove' />
 														</button>
 													</div>
 												</div>
-												<div className='item-details'>
-													<div className='new-old-price'>
-														<p className='new-price'>LKR {item.price.toFixed(2)}</p>
-														<p className='old-price'>LKR {item.oldPrice.toFixed(2)}</p>
+												<div className='cart-item-details'>
+													<div className='cart-new-old-price'>
+														<p className='cart-new-price'>LKR {item.price.toFixed(2)}</p>
+														<p className='cart-old-price'>LKR {item.oldPrice.toFixed(2)}</p>
 													</div>
-													<div className='size-qty'>
+													<div className='cart-size-qty'>
 														{/* Size Change */}
-														<div className='size-dropdown'>
+														<div className='cart-size-dropdown'>
 															<select
 																value={item.size}
 																onChange={(e) => handleSizeChange(item._id, e.target.value)}
@@ -252,7 +252,7 @@ const Cart = () => {
 														</div>
 														{/* <p className='size'>Size: {item.size}</p> */}
 														{/* Update Qty */}
-														<div className='qty'>
+														<div className='cart-qty'>
 															<label>Qty:</label>
 															<input
 																type='number'
@@ -261,11 +261,11 @@ const Cart = () => {
 															/>
 														</div>
 													</div>
-													<div className='save-total'>
-														<p className='save-price'>
+													<div className='cart-save-total'>
+														<p className='cart-save-price'>
 															Saved LKR {((item.oldPrice - item.price) * item.quantity).toFixed(2)}
 														</p>
-														<p className='total-price'>
+														<p className='cart-total-price'>
 															Total: LKR {(item.price * item.quantity).toFixed(2)}
 														</p>
 													</div>
@@ -276,25 +276,25 @@ const Cart = () => {
 								))}
 							</div>
 							{/* Right Side Card */}
-							<div className='right'>
+							<div className='cart-right'>
 								<h2>Summary</h2>
 
-								<div className='s-price'>
+								<div className='cart-s-price'>
 									<p>Subtotal</p>
 									<p>LKR {subTotal.toFixed(2)}</p>
 								</div>
 
-								<div className='s-price'>
+								<div className='cart-s-price'>
 									<p>Saved</p>
 									<p>LKR {saved.toFixed(2)}</p>
 								</div>
 
-								<div className='s-price s-total'>
+								<div className='cart-s-price cart-s-total'>
 									<p>Total</p>
 									<p>LKR {total.toFixed(2)}</p>
 								</div>
 
-								<div className='verify-checkout'>
+								<div className='cart-verify-checkout'>
 									<input onChange={handleCheckboxChange} type='checkbox' />
 									<label>Do you want to pay now?</label>
 								</div>
@@ -302,7 +302,7 @@ const Cart = () => {
 								<button onClick={handleCheckout} disabled={selectedItems.length === 0 || !isChecked}>
 									Checkout ({selectedItems.length})
 								</button>
-								<button onClick={() => navigate('/cartitems')} className='allcart'>
+								<button onClick={() => navigate('/cartitems')} className='cart-allcart'>
 									All Cart Items
 								</button>
 							</div>
@@ -313,11 +313,11 @@ const Cart = () => {
 
 			{/* Delete confirmation pop-up */}
 			{showDeleteConfirmation && (
-				<div className='cart-overlay'>
-					<div className='cart-box'>
+				<div className='cart-cart-overlay'>
+					<div className='cart-cart-box'>
 						<h3>Confirm Deletion</h3>
 						<p>Are you sure you want to delete this item?</p>
-						<button className='cancel-btn' onClick={() => setShowDeleteConfirmation(false)}>
+						<button className='cart-cancel-btn' onClick={() => setShowDeleteConfirmation(false)}>
 							Cancel
 						</button>
 						<button onClick={confirmDelete}>Delete</button>
@@ -327,11 +327,11 @@ const Cart = () => {
 
 			{/* Checkout Verification Modal */}
 			{showModal && (
-				<div className='cart-overlay'>
-					<div className='cart-box'>
+				<div className='cart-cart-overlay'>
+					<div className='cart-cart-box'>
 						<h3>Confirm Checkout</h3>
 						<p>Please confirm if you want to proceed with the checkout.</p>
-						<button className='cancel-btn' onClick={() => setShowModal(false)}>
+						<button className='cart-cancel-btn' onClick={() => setShowModal(false)}>
 							Cancel
 						</button>
 						<button onClick={handleConfirm}>Pay Now</button>

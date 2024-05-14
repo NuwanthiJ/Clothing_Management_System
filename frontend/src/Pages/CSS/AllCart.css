@@ -1,18 +1,18 @@
 /* CSS for Main div section */
-.container-cart {
+.cart-container-cart {
 	width: 100%;
 	display: flex;
 	margin-bottom: 50px;
 }
 
-.page-title {
+.cart-page-title {
 	font-size: 24px;
 	font-weight: 600;
 	margin: 10px;
 	padding: 10px;
 }
 
-.no-item {
+.cart-no-item {
 	width: 100%;
 	height: calc(100vh - 500px);
 	font-size: 20px;
@@ -24,8 +24,8 @@
 	justify-content: center; /* Horizontally center */
 }
 
-.no-item button {
-	background-color: #ff3b3b;
+.cart-no-item button {
+	background-color: #ffcc00;
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
@@ -34,13 +34,13 @@
 	font-size: 16px;
 }
 
-.left {
+.cart-left {
 	/* flex: 70%; */
 	width: 70%;
 	/* background-color: #f1f1f1; */
 }
 
-.right {
+.cart-right {
 	width: 30%;
 	padding: 10px 30px;
 	right: 0;
@@ -56,7 +56,7 @@
 	padding: 10px;
 }
 
-.name-delete {
+.cart-name-delete {
 	display: flex;
 	justify-content: space-between;
 }
@@ -71,7 +71,7 @@
 	padding: 10px;
 }
 
-.title {
+.cart-title {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -84,30 +84,30 @@
 	object-fit: cover;
 }
 
-.delete-btn {
+.cart-delete-btn {
 	border: none;
 	background-color: transparent;
 	margin: 0 10px 0 10px;
 }
 
-.new-old-price {
+.cart-new-old-price {
 	align-items: center;
 	display: flex;
 	justify-content: start;
 }
 
-.new-price {
+.cart-new-price {
 	font-size: 20px;
 	font-weight: 600;
 	margin-right: 10px;
 }
 
-.old-price {
+.cart-old-price {
 	color: #818181;
 	text-decoration: line-through;
 }
 
-.search-box {
+.cart-search-box {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -117,7 +117,7 @@
 	border-radius: 5px;
 }
 
-.size-qty {
+.cart-size-qty {
 	/* align-items: center; */
 	display: flex;
 	font-weight: 500;
@@ -126,20 +126,20 @@
 	margin-right: 15px;
 }
 
-.size {
+.cart-size {
 	font-size: 16px;
 	margin-right: 40px;
 }
 
-.qty {
+.cart-qty {
 	font-size: 16px;
 }
 
-.qty label {
+.cart-qty label {
 	margin-right: 10px;
 }
 
-.qty input {
+.cart-qty input {
 	width: 50px;
 	height: 30px;
 	text-align: center;
@@ -147,7 +147,7 @@
 	border-radius: 5px;
 }
 
-.save-total {
+.cart-save-total {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -156,30 +156,30 @@
 	margin-bottom: -20px;
 }
 
-.total-price {
+.cart-total-price {
 	font-size: 20px;
 	font-weight: 600;
 }
 
-.save-price {
+.cart-save-price {
 	font-size: 16px;
 	font-weight: 600;
-	color: #fc4157;
+	color: #ffcc00;
 }
 
-.button-image {
+.cart-button-image {
 	width: 20px;
 	height: 20px;
 }
 
 /* Summary Text */
-.right h2 {
+.card-right h2 {
 	font-size: 30px;
 	font-weight: 600;
 	margin-bottom: 40px;
 }
 
-.s-price {
+.cart-s-price {
 	display: flex;
 	justify-content: space-between;
 	font-size: 16px;
@@ -187,7 +187,7 @@
 	margin-bottom: -10px;
 }
 
-.s-total {
+.cart-s-total {
 	display: flex;
 	justify-content: space-between;
 	font-size: 20px;
@@ -196,7 +196,7 @@
 	margin-bottom: 20px;
 }
 
-.dwn-btn1 {
+.cart-dwn-btn1 {
 	align-items: center;
 	justify-content: center;
 	display: flex;
@@ -205,7 +205,7 @@
 	margin-left: 0;
 }
 
-.dwn-btn2 {
+.cart-dwn-btn2 {
 	align-items: center;
 	justify-content: center;
 	display: flex;
