@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const Userform = ({ addUser, updateUser, submitted, data, isEdit }) => {
   const [id, setId] = useState();
   const [material, setMaterial] = useState("");
-  const [quantity, setQuantity] = useState("");
+  const [quantity, setQuantity] = useState(""); 
   const [price, setPrice] = useState("");
   const [date, setDate] = useState("");
   const [orderNumberError, setOrderNumberError] = useState("");
