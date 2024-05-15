@@ -1,0 +1,54 @@
+/* CardDetails.css */
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Form styles */
+  .form2 {
+    background-color:#f2f2f2; /* Light gray background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px; /* Set the width to 400px */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+  
+  .ctopic {
+    text-align: center; /* Center the topic */
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .cinput {
+    width: 400px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .cbutton {
+    padding: 10px;
+    background-color:#ffcc00; /* Blue button background color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Make the button a block element */
+    margin: 0 auto; /* Center the button horizontally */
+    width:400px;
+  }
+  
+  .cbutton:hover {
+    background-color:#f6d75b; /* Darker blue on hover */
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 5px;
+  }
+  

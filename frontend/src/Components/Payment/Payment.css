@@ -1,0 +1,58 @@
+/* Payment.css */
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Form styles */
+  .form1 {
+    background-color:#f2f2f2; /* Light blue background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px; /* Set the width to 400px */
+    margin: 0 auto; /* Center the form horizontally */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .pinput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .pbutton-container {
+    text-align: center; /* Center the button */
+  }
+  
+  .pbutton {
+    padding: 10px;
+    background-color:#ffcc00; /* Yellow button background color */
+    color: #fff;
+    width:450px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Make the button a block element */
+    margin: 0 auto; /* Center the button horizontally */
+    font-size: 18px;
+    
+  }
+  
+  .pbutton:hover {
+    background-color:#f6d75b; /* Lighter yellow on hover */
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 5px;
+  }
+  .ptopic
+  {
+    font-weight: bold;
+  }
