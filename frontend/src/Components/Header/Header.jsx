@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './Header.css'
 import logo from '../Assets/logo.png'
 import logo2 from '../Assets/logo2.png'
@@ -10,6 +10,25 @@ import { Link } from 'react-router-dom'
 const Header = ({containerStyles}) => {
 
     const [menu,setMenu] = useState("home");
+    const [cartItems, setCartItems] = useState([]);
+
+    useEffect(() => {
+		fetchData();
+	}, []);
+
+	const fetchData = async () => {
+		const userId = localStorage.getItem('userId');
+		try {
+			const response = await fetch(`http://localhost:3000/api/item/${userId}`);
+			if (!response.ok) {
+				throw new Error('Failed to get cart items');
+			}
+			const data = await response.json();
+			setCartItems(data.Item);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
   return (
     <div className="navbar">
@@ -25,8 +44,9 @@ const Header = ({containerStyles}) => {
          <div className="nav-login-cart">
             <Link to='login'><button >LOGIN</button></Link>
             <Link to='signup'><button >SIGN UP</button></Link>
-            <Link to='cart'><img className="cart" src={cart_icon} alt=" "/></Link>
-            <div className="nav-cart-count">0</div>
+            <Link to='cart'><img className="cart" src={cart_icon} alt=" "/>
+            </Link>
+             <div className="nav-cart-count">{cartItems.length}</div> 
 
          </div>
       
