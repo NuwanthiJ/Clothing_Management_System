@@ -13,6 +13,10 @@ import path from 'path'
 import multer from 'multer'
 import paymentrouter from './routes/payment.route.js'
 import salesrouter from './routes/sales.route.js'
+import userrouter from './routes/user.route.js';
+import User from './models/user.model.js'; 
+
+
 
 
 const routers = express.Router()
@@ -84,6 +88,33 @@ app.post("/adminlogin", async (req, res) => {
 
 })
 
+
+//Login
+app.post('/api/login', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(401).json({ message: 'Invalid email or password' });
+        }
+
+        const isPasswordValid =  bcrypt.compare(password, user.password);
+
+        if (!isPasswordValid) {
+            return res.status(401).json({ message: 'Invalid email or password' });
+        }
+
+        const token = jwt.sign({ id: user._id }, 'your_secret_key', { expiresIn: '1h' });
+        res.status(200).json({ token });
+
+    } catch (error) {
+        console.error('Error during login:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+
 //End Admin Login
 
 
@@ -94,6 +125,8 @@ app.use('/api/item', itemRoutes);
 app.use('/adminlogin',adminrouter);
 app.use('/api/payment',paymentrouter);
 app.use('/api/sales',salesrouter);
+app.use('/api/user', userrouter);
+
 
 
 app.listen(3000, () => {
