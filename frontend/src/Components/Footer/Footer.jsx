@@ -13,7 +13,11 @@ import {
 const Footer = () => {
   return (
     <div className="footer">
-    <MDBFooter className='text-center' color='white' style={{ backgroundColor: '#aa6639' }}>
+
+    {/* /<MDBFooter className='text-center' color='white' style={{ backgroundColor: '#aa6639' }}> */}
+
+    <MDBFooter className='text-center' color='white' style={{ backgroundColor: '#381301' }}>
+
       <MDBContainer className='p-4'>
         <section className='mb-4'>
           <MDBBtn outline color="light" floating className='m-1' href='https://www.facebook.com/mmhcl.clothing?mibextid=LQQJ4d&_rdc=2&_rdr' role='button'>
@@ -65,117 +69,115 @@ const Footer = () => {
 
         <section className='mb-4'>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum repellat quaerat
-            voluptatibus placeat nam, commodi optio pariatur est quia magnam eum harum corrupti dicta, aliquam
-            sequi voluptate quas.
+            MHCL is the premier one-stop shop for all your branded clothing requirements in Sri Lanka.
           </p>
         </section>
 
         <section className=''>
           <MDBRow>
             <MDBCol lg='3' md='6' className='mb-4 mb-md-0'>
-              <h5 className='text-uppercase'>Links</h5>
+              <h5 className='text-uppercase'>INFORMATION</h5>
 
               <ul className='list-unstyled mb-0'>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 1
+                    About Us
                   </a>
                 </li>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 2
+                    Contact Us
                   </a>
                 </li>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 3
+                    Brands
                   </a>
                 </li>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 4
+                    FAQ's
                   </a>
                 </li>
               </ul>
             </MDBCol>
 
             <MDBCol lg='3' md='6' className='mb-4 mb-md-0'>
-              <h5 className='text-uppercase'>Links</h5>
+              <h5 className='text-uppercase'>SITE LINKS</h5>
 
               <ul className='list-unstyled mb-0'>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 1
+                    Privacy Policy
                   </a>
                 </li>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 2
+                    Return & Exchange
                   </a>
                 </li>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 3
+                    Shipping Policy
                   </a>
                 </li>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 4
+                    Gift Cards
                   </a>
                 </li>
               </ul>
             </MDBCol>
 
             <MDBCol lg='3' md='6' className='mb-4 mb-md-0'>
-              <h5 className='text-uppercase'>Links</h5>
+              <h5 className='text-uppercase'>MY ACCOUNT</h5>
 
               <ul className='list-unstyled mb-0'>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 1
+                    Shop
                   </a>
                 </li>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 2
+                    Cart
                   </a>
                 </li>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 3
+                    Checkout
                   </a>
                 </li>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 4
+                    My Account
                   </a>
                 </li>
               </ul>
             </MDBCol>
 
             <MDBCol lg='3' md='6' className='mb-4 mb-md-0'>
-              <h5 className='text-uppercase'>Links</h5>
+              <h5 className='text-uppercase'>CONTACT US</h5>
 
               <ul className='list-unstyled mb-0'>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 1
+                  Dial now for immediate support and peace of mind
                   </a>
                 </li>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 2
+                  +94 76 990 3005
                   </a>
                 </li>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 3
+                    
                   </a>
                 </li>
                 <li>
                   <a href='#!' className='text-white'>
-                    Link 4
+                   
                   </a>
                 </li>
               </ul>
@@ -184,7 +186,11 @@ const Footer = () => {
         </section>
       </MDBContainer>
 
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(191,140,106)' }}>
+
+      {/* <div className='text-center p-3' style={{ backgroundColor: 'rgba(191,140,106)' }}> */}
+
+      <div className='text-center p-3' style={{ backgroundColor: '#210b00' }}>
+
         © 2024 Copyright:
         <a className='text-white' href='https://mhcl.com/'>
           MHCL.com

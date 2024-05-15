@@ -59,3 +59,10 @@
     align-items: center;
     justify-content: center;
 }
+
+.carousel-item img{
+    width:1536px;
+    height:768px;
+    margin: auto;
+  }
+
