@@ -43,7 +43,7 @@
 	margin-top: 13px;
 	gap: 5px;
 	color: #1c1c1c;
-	fonr-size: 16px;
+	font-size: 16px;
 }
 
 .productdisplay-right-prices {
@@ -60,7 +60,7 @@
 }
 
 .productdisplay-right-price-new {
-	color: #ff4141;
+	color: #ffcc00;
 }
 
 .productdisplay-right-size h3 {
@@ -95,7 +95,7 @@
 	font-size: 16px;
 	font-weight: 600;
 	color: white;
-	background: #ff4141;
+	background: #ffcc00;
 	margin-bottom: 40px;
 	border: none;
 	border-radius: 10px;
