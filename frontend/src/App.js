@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import { ToastContainer} from 'react-toastify';
-import Login from './Pages/Login';
+// import Login from './Pages/Login';
 import AdminLogin from './Pages/AdminLogin';
 import Home from './Pages/Home';
-import Signup from './Pages/Signup';
+// import Signup from './Pages/Signup';
 import Cart from './Pages/Cart';
 import AllCart from './Pages/AllCart';
 import Product from './Pages/Product';
@@ -31,6 +31,15 @@ import OM_Dashboard from './Components/OrderManager/OMDashboard';
 //import OM_OrderHistory from '.Components/OrderManager/OMOrderHistory';
 
 
+// User Manager
+import CM_Login from './Components/UserManager/Login';
+import CM_Signup from './Components/UserManager/Signup';
+import CM_Profile from './Components/UserManager/Profile';
+import Udashboard from './Components/UserManagerDashboard/UDashboard';
+import UAllUsers from './Components/UserManagerDashboard/UAllUsers';
+import UProfile from './Components/UserManagerDashboard/UProfile';
+import Profile from './Components/UserManager/Profile';
+
 function App() {
 
   return (
@@ -47,8 +56,8 @@ function App() {
         </Route>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/cartitems' element={<AllCart />} />
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/signup' element={<Signup/>}/>
+        {/* <Route path='/login' element={<Login/>}/> */}
+        {/* <Route path='/signup' element={<Signup/>}/> */}
         <Route path='/adminlogin' element={<AdminLogin/>}/>
 
         {/* Product Manager */}
@@ -77,6 +86,20 @@ function App() {
         <Route path='/pmain' element={<P_main />} />
         <Route path='/pallsale' element={<P_all />} />
         <Route path='/pedit/:id' element={<P_Edit />} />
+
+
+
+        <Route path='/login' element={<CM_Login/>}/>
+        <Route path='/signup' element={<CM_Signup/>}/>
+        <Route path='/editprofile' element={<CM_Profile/>}/>
+       
+
+       {/*  User Manager  */}
+       <Route path='/udashboard' element={<Udashboard/>}/>
+       <Route path='/uallusers' element={<UAllUsers/>}/>
+       {/* <Route path='/uprofile' element={<UProfile/>}/> */}
+       {/* <Route path="/user/:id" element={<UProfile/>} /> */}
+       <Route path="/user/:id" element={<Profile/>} />
           
              
       </Routes>

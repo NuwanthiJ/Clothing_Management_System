@@ -13,7 +13,11 @@ import {
 const Footer = () => {
   return (
     <div className="footer">
+
+    {/* /<MDBFooter className='text-center' color='white' style={{ backgroundColor: '#aa6639' }}> */}
+
     <MDBFooter className='text-center' color='white' style={{ backgroundColor: '#381301' }}>
+
       <MDBContainer className='p-4'>
         <section className='mb-4'>
           <MDBBtn outline color="light" floating className='m-1' href='https://www.facebook.com/mmhcl.clothing?mibextid=LQQJ4d&_rdc=2&_rdr' role='button'>
@@ -182,7 +186,11 @@ const Footer = () => {
         </section>
       </MDBContainer>
 
+
+      {/* <div className='text-center p-3' style={{ backgroundColor: 'rgba(191,140,106)' }}> */}
+
       <div className='text-center p-3' style={{ backgroundColor: '#210b00' }}>
+
         © 2024 Copyright:
         <a className='text-white' href='https://mhcl.com/'>
           MHCL.com

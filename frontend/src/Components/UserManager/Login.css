@@ -1,0 +1,63 @@
+.login {
+  max-width: 550px;
+  margin: 50px auto;
+  padding: 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.login h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.form-group1 {
+  margin-bottom: 20px;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Align items vertically */
+}
+
+.form-group1 label {
+  flex: 1; /* Distribute space evenly */
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.login-input-box1,
+.login-input-box3 {
+  flex: 2; /* Take up more space */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.login-input-box1:focus,
+.login-input-box3:focus {
+  border-color: #007bff;
+}
+
+.btnlogin {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #f69f26;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnlogin:hover {
+  background-color: #c77707;
+}
+
+
+  .form-group1 .remember-me {
+    margin-left: auto; /* Align to the right */
+  }

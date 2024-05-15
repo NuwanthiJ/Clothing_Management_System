@@ -1,0 +1,37 @@
+/* UProfile.css */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* You can adjust this if needed */
+  }
+  
+  .card1 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 500px; /* Increased max-width */
+    text-align: center; /* Centering the content inside the card */
+    padding: 40px; /* Increased padding */
+    border-radius: 10px; /* Increased border radius */
+    background-color: #f9f9f9;
+  }
+  
+  .titlename {
+    color: grey;
+    font-size: 20px; /* Increased font size */
+  }
+  
+  .contactbtn {
+    border: none;
+    outline: none;
+    background-color: #fffb00;
+    color: rgb(18, 2, 2);
+    padding: 8px 30px; /* Increased padding */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px; /* Increased font size */
+  }
+  
+  .contactbtn:hover {
+    background-color: #deef25;
+  }
+  

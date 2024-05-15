@@ -1,0 +1,56 @@
+.profile {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 80px;
+}
+
+.profile h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.profile-input-box1,
+.profile-input-box2,
+.profile-input-box3,
+.profile-input-box4,
+.profile-input-box5 {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.profile-input-box2,
+.profile-input-box3,
+.profile-input-box4,
+.profile-input-box5 {
+  resize: vertical;
+}
+
+.btnsubmitprofile {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color:#f69f26;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnsubmitprofile:hover {
+  background-color: #c77707;
+}
