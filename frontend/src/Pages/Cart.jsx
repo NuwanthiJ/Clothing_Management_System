@@ -177,7 +177,7 @@ const Cart = () => {
 						<p>No items yet? Continue shopping to explore more.</p>
 					</div>
 					<div className='cart-no-item'>
-						<button onClick={() => navigate('/home')}>Continue Shopping</button>
+						<button onClick={() => navigate('/')}>Continue Shopping</button>
 					</div>
 				</div>
 			) : (
