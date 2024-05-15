@@ -1,0 +1,137 @@
+/* Add styles for the PDF header */
+@page {
+  margin-top: 50px;
+}
+
+.user-table-container {
+  margin: 0 auto; /* Center align the container */
+  width: 95%; /* Adjust width as needed */
+}
+
+.uall-grid-container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas:
+    'sidebar header header header'
+    'sidebar main main main';
+  height: 100vh;
+}
+
+.uall-grid-container h3 {
+  margin: 2% 0 2% 2%;
+}
+
+.display-container .userSearch input {
+  width: 300px;
+  height: 50px;
+  font-size: 18px;
+  padding: 8px;
+  margin-left: 2%;
+  border-radius: 10px;
+  background-color: #ededeb;
+  border: 2px solid #edad18;
+}
+
+.display-container .userSearch input[type="search" i] {
+  appearance: auto;
+  box-sizing: border-box;
+  outline-offset: 0px;
+  outline-color: white;
+}
+
+.user-table {
+  border-collapse: collapse;
+  width: 95%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+  overflow-x: auto;
+  margin: 2% 2% 2% 2%;
+  box-shadow: 0px 10px 10px #ccc;
+}
+
+.u-thead {
+  background-color: #ccc;
+  color: #222;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px; /* Adjusted padding for better spacing */
+}
+
+.user-table tbody tr:hover {
+  background-color: #eee;
+}
+
+.user-table th,
+.user-table td {
+  text-align: left;
+}
+
+.u-actions {
+  display: flex;
+  justify-content: center; /* Center align actions */
+}
+
+.u-actions button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.u-edit {
+  color: blue;
+}
+
+.u-delete {
+  color: #e10d05;
+}
+
+.report-button-container {
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  margin-top: 20px;
+  padding-right: 20px; /* Add padding to create space from the right */
+}
+
+
+.ureport {
+  background-color: #4caf50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ureport:hover {
+  background-color: #45a049; /* Darker green */
+}
+/* Center align the table */
+.user-table-container {
+  margin: 0 auto; /* Center align the container */
+  width: 95%; /* Adjust width as needed */
+}
+
+/* Style the report heading */
+.report-heading {
+  font-family: 'Arial', sans-serif; /* Use a preferred font family */
+  font-size: 24px; /* Adjust font size as needed */
+  color: #333; /* Set font color */
+  text-align: center; /* Align text to the center */
+}
+
+/* Align report button to the center */
+/* Align report button to the right */
+.report-button-container {
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  margin-top: 20px;
+  padding-right: 20px; /* Add padding to create space from the right */
+}
+
+
+

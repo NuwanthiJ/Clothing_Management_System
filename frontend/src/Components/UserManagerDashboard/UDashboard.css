@@ -1,0 +1,97 @@
+    /* UDashboard.css */
+
+
+    /* Center the card deck horizontally */
+    .card-deck {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Align items to the center horizontally */
+      padding: 80px; /* Add padding around the card deck */
+    }
+
+    /* Style the cards */
+    .card {
+      width: 300px; /* Increase the width of the cards */
+      height: 500px; /* Increase the height of the cards */
+      margin: 20px; /* Adjust the margin around the cards */
+      border-radius: 20px; /* Add border radius for rounded corners */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+      transition: transform 0.3s; /* Add transition effect */
+      padding: 40px; /* Increase padding inside the card */
+    }
+
+    .card:hover {
+      transform: translateY(-5px); /* Move card slightly up on hover */
+    }
+
+    .card-body {
+      padding: 20px; /* Adjust padding inside the card body */
+    }
+
+    .card-text {
+      margin: 0; /* Remove default margin for card text */
+      color: #ffffff; /* Set text color */
+      font-size: 20px; /* Set font size */
+    }
+
+    /* Customize button styles */
+    .btn {
+      background-color: #68caca; /* Button background color */
+      color: #ffffff; /* Button text color */
+      border: none; /* Remove button border */
+      border-radius: 5px; /* Add border radius */
+      padding: 10px 20px; /* Adjust button padding */
+      font-size: 16px; /* Set button font size */
+      cursor: pointer; /* Add pointer cursor on hover */
+      transition: background-color 0.3s; /* Add transition effect */
+    }
+
+    .btn:hover {
+      background-color: #a9bcd0; /* Darken button background color on hover */
+    }
+
+    .userSearch button {
+      padding: 8px 12px;
+      margin-left: 10px;
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .userSearch button:hover {
+      background-color: #45a049;
+    }
+
+  /* Add this CSS to your UAllUsers.css file */
+  .user-table-container button.u-delete-btn {
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left; /* Align the button to the left */
+  }
+
+  .user-table-container button.u-delete-btn:hover {
+    background-color: #d32f2f;
+  }
+  .footerx {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1b1811d9; /* Green background color */
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .short-description {
+    margin-top: 20px;
+    padding: 80px;
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  

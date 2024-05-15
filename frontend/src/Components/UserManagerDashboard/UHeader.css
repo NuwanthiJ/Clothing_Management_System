@@ -1,0 +1,46 @@
+/* UHeader.css */
+
+/* Style the search bar */
+.search-bar {
+  padding: 8px 16px; /* Add padding to the search bar */
+  border: none; /* Remove border */
+  border-radius: 20px; /* Add border radius */
+  background-color: #f2f2f2; /* Set background color */
+  font-size: 16px; /* Set font size */
+  color: #555; /* Set text color */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Add transition effect */
+}
+
+.search-bar:focus {
+  outline: none; /* Remove focus outline */
+  background-color: #e6e6e6; /* Change background color on focus */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add shadow effect on focus */
+}
+
+/* Style the header */
+.pm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Add padding to the header */
+  background-color: #fff; /* Set background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+}
+
+.pm-header-left,
+.pm-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.pm-icon1 {
+  font-size: 24px; /* Increase icon size */
+  margin-right: 10px; /* Add margin between icons */
+  color: #555; /* Set icon color */
+}
+
+.pm-icon1:hover {
+  color: #333; /* Darken icon color on hover */
+}
+
+
