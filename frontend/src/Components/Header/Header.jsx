@@ -4,6 +4,7 @@ import logo from '../Assets/logo.png'
 import logo2 from '../Assets/logo2.png'
 import cart_icon from '../Assets/cart_icon.png'
 import { Link } from 'react-router-dom'
+import admin from '../Assets/admin-3.png'
 
 
 
@@ -42,7 +43,8 @@ const Header = ({containerStyles}) => {
             <li onClick={()=>{setMenu("men")}}><Link style={{textDecoration: 'none'}} to='/men'>MEN'S WARE</Link></li>           
          </ul>
          <div className="nav-login-cart">
-            <Link to='login'><button >LOGIN</button></Link>
+            <Link to='adminlogin'><img  src={admin} alt=" "/></Link>
+            <Link to='login'><button>LOGIN</button></Link>
             <Link to='signup'><button >SIGN UP</button></Link>
             <Link to='cart'><img className="cart" src={cart_icon} alt=" "/>
             </Link>

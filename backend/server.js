@@ -4,8 +4,8 @@ import cors from 'cors'
 
 import feedbackRouter from './routes/feedback.route.js'
 import itemRoutes from './routes/item.route.js'
-
-
+import adminrouter from './routes/admins.route.js'
+import Admins from './models/admins.model.js'
 import feedbackrouter from './routes/feedback.route.js'
 import productrouter from './routes/product.route.js'
 import Product from './models/product.model.js'
@@ -61,11 +61,35 @@ app.post('/api/product', upload.single("image"),  (req,res) => {
 });
 /** End Image Upload**/
 
+//Admin Login
+app.post("/adminlogin", async (req, res) => {
+    const {email, password} = req.body;
+    const admin =  await Admins.findOne({ admin_username : email }).lean();
+    console.log(admin);
+
+        if(admin) {
+            
+            if(admin.admin_password === password){
+                res.json(admin.admin_type)
+                
+            }else{
+                
+                res.json("The password is incorrect")
+            }
+        }else{
+            res.json("No record existed")
+        }
+
+})
+
+//End Admin Login
+
 
 
 app.use('/api/feedback', feedbackrouter);
 app.use('/api/product',productrouter);
 app.use('/api/item', itemRoutes);
+app.use('/adminlogin',adminrouter);
 
 
 app.listen(3000, () => {
