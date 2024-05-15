@@ -3,6 +3,7 @@ import './CSS/Cart.css';
 import deleteImg from './delete.svg';
 import { useNavigate } from 'react-router-dom';
 
+
 const Cart = () => {
 	const [cartItems, setCartItems] = useState([]);
 	const [subTotal, setSubTotal] = useState(0);
@@ -163,7 +164,7 @@ const Cart = () => {
 
 	const handleConfirm = () => {
 		setShowModal(false);
-		navigate('/checkout');
+		navigate('/payment');
 	};
 
 	// Filter cart items based on search query
