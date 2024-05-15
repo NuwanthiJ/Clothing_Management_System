@@ -1,18 +1,18 @@
 
-import React from 'react'
+// import React from 'react'
 
 
 
-const Login = () => {
+// const Login = () => {
   
-  return (
-    <div>  
-      <h1>login page</h1>
-      <button className="loginbtn">LOGIN
-      </button>
-    </div>
-  );
-};
+//   return (
+//     <div>  
+//       <h1>login page</h1>
+//       <button className="loginbtn">LOGIN
+//       </button>
+//     </div>
+//   );
+// };
 
-export default Login
+// export default Login
 
