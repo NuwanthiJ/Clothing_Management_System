@@ -41,14 +41,14 @@ function OMHome() {
         },
         {
           name: 'June',
-          Men: 18,
+          Men: 0,
           Women: 0,
           amt: 2500,
         },
         {
           name: 'July',
           Men: 0,
-          Women: 10,
+          Women: 0,
           amt: 2100,
         },
       ];
