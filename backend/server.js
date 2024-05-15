@@ -1,11 +1,17 @@
 import express from 'express'
 import dbCon from './utils/db.util.js'
 import cors from 'cors'
+
+import feedbackRouter from './routes/feedback.route.js'
+import itemRoutes from './routes/item.route.js'
+
+
 import feedbackrouter from './routes/feedback.route.js'
 import productrouter from './routes/product.route.js'
 import Product from './models/product.model.js'
 import path from 'path'
 import multer from 'multer'
+
 
 const routers = express.Router()
 const app = express()
@@ -13,6 +19,12 @@ dbCon()
 
 app.use(express.json())
 app.use(cors())
+
+
+// app.use('/api/feedback', feedbackRouter)
+// app.use('/items', itemRoutes);
+// app.use('/itemdetails', itemdetailsRoutes);
+
 
 
 /** Start Image Upload**/
@@ -53,6 +65,8 @@ app.post('/api/product', upload.single("image"),  (req,res) => {
 
 app.use('/api/feedback', feedbackrouter);
 app.use('/api/product',productrouter);
+app.use('/api/item', itemRoutes);
+
 
 app.listen(3000, () => {
     console.log('Server is listening on port 3000'); 
