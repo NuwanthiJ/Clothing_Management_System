@@ -43,10 +43,10 @@ const Header = ({containerStyles}) => {
             <li onClick={()=>{setMenu("men")}}><Link style={{textDecoration: 'none'}} to='/men'>MEN'S WARE</Link></li>           
          </ul>
          <div className="nav-login-cart">
-            <Link to='adminlogin'><img  src={admin} alt=" "/></Link>
-            <Link to='login'><button>LOGIN</button></Link>
-            <Link to='signup'><button >SIGN UP</button></Link>
-            <Link to='cart'><img className="cart" src={cart_icon} alt=" "/>
+            <Link to='/adminlogin'><img  src={admin} alt=" "/></Link>
+            <Link to='/login'><button>LOGIN</button></Link>
+            <Link to='/signup'><button >SIGN UP</button></Link>
+            <Link to='/cart'><img className="cart" src={cart_icon} alt=" "/>
             </Link>
              <div className="nav-cart-count">{cartItems.length}</div> 
 
