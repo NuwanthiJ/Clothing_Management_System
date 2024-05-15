@@ -11,6 +11,8 @@ import productrouter from './routes/product.route.js'
 import Product from './models/product.model.js'
 import path from 'path'
 import multer from 'multer'
+import paymentrouter from './routes/payment.route.js'
+import salesrouter from './routes/sales.route.js'
 
 
 const routers = express.Router()
@@ -90,6 +92,8 @@ app.use('/api/feedback', feedbackrouter);
 app.use('/api/product',productrouter);
 app.use('/api/item', itemRoutes);
 app.use('/adminlogin',adminrouter);
+app.use('/api/payment',paymentrouter);
+app.use('/api/sales',salesrouter);
 
 
 app.listen(3000, () => {
