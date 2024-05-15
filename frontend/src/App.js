@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import { ToastContainer} from 'react-toastify';
 import Login from './Pages/Login';
+import AdminLogin from './Pages/AdminLogin';
 import Home from './Pages/Home';
 import Signup from './Pages/Signup';
 import Cart from './Pages/Cart';
@@ -38,6 +39,7 @@ function App() {
         <Route path='/cartitems' element={<AllCart />} />
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
+        <Route path='/adminlogin' element={<AdminLogin/>}/>
 
         {/* Product Manager */}
 

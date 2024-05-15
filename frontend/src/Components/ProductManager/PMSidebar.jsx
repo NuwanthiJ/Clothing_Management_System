@@ -66,13 +66,13 @@ function PMSidebar({openSidebarToggle, OpenSidebar}) {
                     <TbReportSearch className='pm-icon'/> Reports
                 
             </li> */}
-            <li className='pm-sidebar-list-item'>
-                {/* <a href=""> */}
+            {/* <li className='pm-sidebar-list-item'>
+                
                     <BsFillGearFill className='pm-icon'/> Setting
-                {/* </a> */}
-            </li>
+                
+            </li> */}
             <li className='pm-sidebar-list-item'>
-            <Link to="/">
+            <Link to="/adminlogin">
                     <FiLogOut className='pm-icon'/> Logout
             </Link>
             </li>
