@@ -15,6 +15,16 @@ import PM_Dashboard from './Components/ProductManager/PMDashboard';
 import PM_AddProduct from './Components/ProductManager/PMAddProduct';
 import PM_AllProduct from './Components/ProductManager/PMAllProduct';
 import PM_EditProdct from './Components/ProductManager/PMEditProduct';
+import PM_payment from './Components/Payment/Payment';
+import PM_Card from  './Components/Payment/CardDetails'
+import P_header from './Components/PaymentManager/PHeader';
+import P_side from './Components/PaymentManager/PSidebar';
+import P_add from './Components/PaymentManager/PAddSales';
+import P_home from './Components/PaymentManager/PHome';
+import P_dashboard from './Components/PaymentManager/PDashboard';
+import P_main from './Components/PaymentManager/Pmain'; // Check the file path and component name
+import P_all from './Components/PaymentManager/PAllSales';
+import P_Edit from './Components/PaymentManager/PEditSale';
 
 import OM_Dashboard from './Components/OrderManager/OMDashboard';
 //import OM_Cartitemdetails from '.Components/OrderManager/OMCartitemdetails';
@@ -52,6 +62,21 @@ function App() {
         <Route path='/om_dashboard' element={<OM_Dashboard/>}/>
         {/*<Route path='/cartitemdetails' element={<OM_Cartitemdetails/>}/>
         <Route path='/orderhistory' element={<OM_OrderHistory/>}/>*/} 
+
+
+        {/*Payment manager*/}
+
+
+        <Route path='/payment' element={<PM_payment/>}/>
+        <Route path='/card' element={<PM_Card/>}/>
+        <Route path='/header' element={<P_header/>}/>
+        <Route path='/sidebar' element={<P_side/>}/>
+        <Route path='/padd' element={<P_add/>}/>
+        <Route path='/phome' element={<P_home/>}/>
+        <Route path='/pdashboard' element={<P_dashboard/>}/>
+        <Route path='/pmain' element={<P_main />} />
+        <Route path='/pallsale' element={<P_all />} />
+        <Route path='/pedit/:id' element={<P_Edit />} />
           
              
       </Routes>

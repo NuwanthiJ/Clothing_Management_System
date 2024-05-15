@@ -1,0 +1,99 @@
+.pmadd-grid-container {
+  display: grid;
+  grid-template-columns: 260px 1fr; /* Sidebar takes 260px, form takes the remaining space */
+  grid-template-rows: auto; /* Let the rows adjust based on content */
+  grid-template-areas:
+    'sidebar header'
+    'sidebar main';
+  height: 100vh;
+}
+
+.main {
+  grid-area: main;
+}
+
+.form-container {
+  background-color: #f2f2f2; /* New background color */
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 0;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px -15px rgba(0, 0, 0, 0.3);
+  /* New */
+  margin: 5% 0 10%;
+  width: 75%;
+}
+
+.form-container .title {
+  color: #000;
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 0 0 25px;
+}
+
+.form-container .form-horizontal {
+  font-size: 0;
+}
+
+.form-container .form-group {
+  width: 100%;
+  padding: 0 8px;
+  margin: 0 0 8px;
+  display: inline-block;
+}
+
+.form-container .form-group label {
+  color: #454543;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 0 10%;
+  padding: 12px 12px 12px 0;
+  float: left;
+}
+
+.form-container .form-control {
+  color: #888;
+  background: #fff;
+  font-weight: 400;
+  letter-spacing: 1px;
+  height: 45px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 2px solid #e7e7e7;
+  box-shadow: none;
+  width: 75%;
+}
+
+.form-container .form-control:focus {
+  box-shadow: 0 0 5px #dcdcdc;
+}
+
+.form-container .form-select {
+  color: #888;
+  background: #fff;
+  font-weight: 400;
+  letter-spacing: 1px;
+  height: 45px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #e7e7e7;
+  box-shadow: none;
+  width: 75%;
+  float: initial;
+}
+
+.form-container .form-horizontal .btn.add {
+  color: #fff;
+  background: #ffcc00;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-width: 40%;
+  padding: 8px 15px 9px;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
+}
+
+/* Add other styles as needed */
