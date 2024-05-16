@@ -48,7 +48,8 @@ const Header = ({containerStyles}) => {
             <Link to='/signup'><button >SIGN UP</button></Link>
             <Link to='/cart'><img className="cart" src={cart_icon} alt=" "/>
             </Link>
-             <div className="nav-cart-count">{cartItems.length}</div> 
+             {/* <div className="nav-cart-count">{cartItems.length}</div> */}
+             <div className="nav-cart-count">0</div> 
 
          </div>
       
